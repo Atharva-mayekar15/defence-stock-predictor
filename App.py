@@ -177,21 +177,21 @@ def _calculate_atr(group, period=14):
 
 def _download_symbol(ticker, start_date):
     """Download from Yahoo Finance; return tidy DataFrame or None."""
-    try:
-        end_date = datetime.now()
-        start_date_obj = end_date - timedelta(days=500)
-        
-        # Add retry logic for cloud rate limits
-        raw = None
-        for attempt in range(3):
+    end_date = datetime.now()
+    start_date_obj = end_date - timedelta(days=500)
+    
+    # Add retry logic for cloud rate limits
+    raw = None
+    for attempt in range(3):
+        try:
             raw = yf.download(ticker, start=start_date_obj, end=end_date, progress=False)
             if not raw.empty:
                 break
-            time.sleep(1)
-            
-        if raw is None or raw.empty:
-            return None
-    except Exception:
+        except Exception:
+            pass
+        time.sleep(1)
+        
+    if raw is None or raw.empty:
         return None
     if isinstance(raw.columns, pd.MultiIndex):
         raw.columns = raw.columns.get_level_values(0)
