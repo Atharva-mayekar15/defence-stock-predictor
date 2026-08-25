@@ -1,0 +1,14 @@
+{
+  "horizon": "1M",
+  "target": "relative_future_return_1m",
+  "train_end": "2023-12-31",
+  "validation_end": "2025-12-31",
+  "n_features": 71,
+  "n_train": 9115,
+  "n_val": 3449,
+  "n_test": 910,
+  "val_direction": 0.5540736445346477,
+  "val_spearman": 0.262117346024111,
+  "test_direction": 0.5692307692307692,
+  "test_spearman": 0.10563749454179645
+}
