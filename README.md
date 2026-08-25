@@ -2,7 +2,7 @@
 
 A production-grade machine learning pipeline and interactive web application designed to predict the relative forward returns (alpha) of Indian Defence Sector stocks. 
 
-**Live Demo:** [Check out the Live Dashboard here!](https://defence-stock-predictor.streamlit.app/) *(Note: If you just deployed, update this link with your actual Streamlit URL!)*
+**Live Demo:** [Check out the Live Dashboard here!](https://defence-stock-predictor.streamlit.app/)
 
 ## 📌 Project Overview
 Stock return prediction is notoriously difficult and heavily prone to "data leakage" in beginner projects. This project was built with professional quant-finance rigor:
